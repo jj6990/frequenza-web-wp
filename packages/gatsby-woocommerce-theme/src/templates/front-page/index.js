@@ -8,9 +8,10 @@ import { getOgImage } from "../../utils/functions";
 
 const FrontPage = ( props ) => {
 
+	console.log(props.pageContext);
 	const {
 		      pageContext: {
-			      page: { title, seo, uri },
+			      //page: { title, seo, uri },
 			      categories,
 			      categoryName,
 			      postSearchData: { products, options }
@@ -22,13 +23,6 @@ const FrontPage = ( props ) => {
 			{
 				! isEmpty( props.pageContext ) ? (
 					<>
-						<SEO
-							title={ title }
-							seoData={ seo }
-							uri={ uri }
-							header={ { siteTitle: 'Gatsby WooCommerce Theme' } }
-							openGraphImage={ getOgImage( seo ) }
-						/>
 						<Carousel categories={ categories }/>
 						<Search
 							products={ products }
